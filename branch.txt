@@ -13,7 +13,6 @@ Git操作（ブランチ編）branch
  $ git branch [branch]
 ※ git branchコマンドは作成するブランチに移動しない。
 
-
  (3) ブランチのマージ
 Fast Forward方式でマージする（デフォルト）
  $ git merge [branch]
