@@ -1,14 +1,12 @@
 #Git操作（マージ編, merge）
 
-# (1)  developブランチをmainブランチにマージする
-
- $ git branch #ブランチ確認
- *main
+# (1)  developブランチをmasterブランチにマージする
+ $ git branch
+ *master
  $ git switch -c "develop" # developブランチを生成
  $ git branch
- main
+ master
  *develop
- main
  
  $ touch practice01_develop.txt # ファイルを生成
  $ git add practice01_develop.txt
@@ -17,25 +15,27 @@
  $ git commit -am "develop practice01-2"
  $ git log --oneline
  
- $ git switch "main" # mainブランチに切り替え
+ $ git switch "master" # masterブランチに切り替え
  $ git branch
  develop
- *main
+ *master
  
- $ touch practice01_main.txt # masterブランチにファイルを生成
- $ git add practice01_main.txt
- $ git commit -m "main practice01"
- $ echo "main practice01" > practice01_main.txt
- $ git commit -am "main practice01-2"
+ $ touch practice01_master.txt # masterブランチにファイルを生成
+ $ git add practice01_master.txt
+ $ git commit -m "master practice01"
+ $ echo "master practice01" > practice01_master.txt
+ $ git commit -am "master practice01-2"
  $ git log --oneline
- $ ls
- practice01_main.txt
  
- $ git merge develop # developブランチをマージ
+ $ git merge --no-ff develop # developブランチをマージする。ただしfast-forward(ff)でのマージは行わない（コミットする）。
  $ git log --oneline -1
- 992b649 (HEAD -> main) Merge branch 'develop'
+ 992b649 (HEAD -> master) Merge branch 'develop'
  $ ls
- practice01_develop.txt    practice01_main.txt
+ practice01_develop.txt    practice01_master.txt
 
 
+# (2)  fetchしたorigin/masterをmasterにマージする
+ $ git fetch origin master
+ $ git checkout master
+ $ git merge origin/master  # origin/masterをmasterにマージする
 
