@@ -32,9 +32,15 @@ Git操作（ブランチ編）branch
 別ブランチの名前を変える
  $ git branch -m [old branch nane]  [new branch name]
 
-# (5) ブランチ一覧表示
+# (5-1) カレントブランチの確認
+ $ git branch | grep ^'*' または ^\*
+ または
+ $ git status
+
+# (5-2) ブランチ一覧表示
  $ git branch
  *main
+ feature
 
 リモート追跡ブランチを含むブランチ一覧表示
  $ git branch -a

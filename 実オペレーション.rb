@@ -2,7 +2,7 @@
 
 # [1] masterにpullする（リモートmasterとローカルmasterを同期させる）
 
- git checkout master && git pull origin master --no-edit && git fetch origin --prune && git reset --hard origin/master
+git checkout master && git pull origin master --no-edit && git fetch origin --prune && git reset --hard origin/master
 
  # git checkout master # masterブランチ切り替え
  # git pull origin master --no-edit  # リモート origin masterをローカルmasterブランチにマージする。--no-editはメッセージ入力はなし
@@ -12,6 +12,5 @@
 
 # [2] リモートのorigin HEADにpushする
 
- git add . && git commit -a -m save && git push origin HEAD
-
+git add . && git commit -a -m save && git push origin HEAD
 
